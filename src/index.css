@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1{
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: rgb(78, 78, 235);
+}
+
+li{ 
+  font-size: 0.9rem;
+  list-style: none;
+  color: rgb(8, 8, 233);
+}
+
+.home-section {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Example grid layout */
+  grid-gap: 1rem; 
+}
+
+span{
+  font-size: 0.8rem;
+}
+
+kbd{
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 2px 5px;
+  font-family: monospace;
+}
+
+.github-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 6px 28px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.github-button:hover {
+  background-color: #e0e0e0;
+}
+
+.github-button img {
+  margin-right: 10px;
+}
+
+.child-li{
+  list-style-type: none; /* Remove default list style */
+}
+
+.child-li::before {
+  content: "";
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  border: 1px solid black; /* Adjust border style and color */
+  margin-right: 0.5em;
+  border-radius: 2rem;
+}
