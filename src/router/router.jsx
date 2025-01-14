@@ -13,6 +13,7 @@ import FeatureList from "../components/FeatureList/FeatureList";
 import Profeature from "../components/ProFeatures/Profeature";
 import HelpPage from "../components/Help/HelpComp";
 import RegisterLogin from "../components/Auth/RegisterLogin";
+import TermsOfService from "../../TermsOfService";
 
 const router=createBrowserRouter([
     {
@@ -68,6 +69,10 @@ const router=createBrowserRouter([
         {
             path:'profeature',
             element:<Profeature />
+        },
+        {
+            path:'legals',
+            element:<TermsOfService />
         }
        ]
     },

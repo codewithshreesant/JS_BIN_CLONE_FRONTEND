@@ -45,7 +45,7 @@ const multipleSections = [
         links: [
             { name: 'Support JS Bin to keep the project open source & MIT for all', path: 'https://opencollective.com/jsbin/contribute' },
             { name: 'Follow @js_bin on twitter', path: 'https://x.com/js_bin?mx=2' },
-            { name: 'By using JS Bin you agree to our legal terms', path: '#' }
+            { name: 'By using JS Bin you agree to our legal terms', path: '/help/legals' }
         ]
     }
 ]
@@ -56,7 +56,7 @@ function Navbar() {
     return (
         <>
         { showNav &&
-        <nav className='bg-blue-50 h-[30vh] flex items-center opacity-70'>
+        <nav className='bg-blue-50 h-[30vh] md:flex items-center opacity-70 hidden'>
             <div className='grid grid-cols-5 mx-5'>
             <Logo setShowNav={setShowNav}/>
             {

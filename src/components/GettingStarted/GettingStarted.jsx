@@ -43,10 +43,10 @@ function GettingStarted() {
             <div>
                 <h2 className='text-black font-bold text-[1.8rem]'>Finding out more</h2>
                 <ul>
-                    <li className='list-disc'>The JS Bin blog - where we’ll post what we’ve released that week and useful information about JS Bin</li>
-                    <li className='list-disc'>Twitter - posting alerts or replying to your quick questions</li>
-                    <li className='list-disc'>Videos - a growing collection of video tutorials</li>
-                    <li className='list-disc'>Issues, bugs and ideas - if you have a problem or suggestion, we always want to hear</li>
+                    <li className='list-disc text-black text-[1rem]'>The JS Bin blog - where we’ll post what we’ve released that week and useful information about JS Bin</li>
+                    <li className='list-disc text-black text-[1rem]'>Twitter - posting alerts or replying to your quick questions</li>
+                    <li className='list-disc text-black text-[1rem]'>Videos - a growing collection of video tutorials</li>
+                    <li className='list-disc text-black text-[1rem]'>Issues, bugs and ideas - if you have a problem or suggestion, we always want to hear</li>
                 </ul>
             </div>
         </div>

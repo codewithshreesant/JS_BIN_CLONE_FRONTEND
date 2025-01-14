@@ -5,7 +5,8 @@ import { FaGithub } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom';
 import { IoMdArrowDropdown } from "react-icons/io";
 import { CssDropdown, HtmlDropdown, JsDropdown } from './Navbar/HomeNav/Dropdown/Dropdowns';
-
+import Checkbox from '@mui/material/Checkbox';
+const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 const CodeEditor = () => {
   const { showCss, setShowCss, showJs, setShowJs, showHtml, setShowHtml } = useContext(contextApi);
   const [htmlCode, setHtmlCode] = useState(`
@@ -133,7 +134,7 @@ const CodeEditor = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-4"> 
       <div className="flex flex-col border p-2 relative"> 
-        <button className='h-[6vh] flex items-center cursor-pointer' onClick={() => setShowHtmlDropdown(!showHtmlDropdown)}>
+        <button className='h-[6vh] flex items-center cursor-pointer text-blue-500' onClick={() => setShowHtmlDropdown(!showHtmlDropdown)}>
           <span>HTML</span>
           <IoMdArrowDropdown className='h-[2vh] w-[1vw]' />
         </button>
@@ -142,7 +143,7 @@ const CodeEditor = () => {
       </div>
       {showCss && (
         <div className="flex flex-col border p-2 relative"> 
-          <button className='h-[6vh] flex items-center cursor-pointer' onClick={() => setShowCssDropdown(!showCssDropdown)}>
+          <button className='h-[6vh] flex items-center cursor-pointer text-blue-500' onClick={() => setShowCssDropdown(!showCssDropdown)}>
             <span>CSS</span>
             <IoMdArrowDropdown className='h-[2vh] w-[1vw]' />
           </button>
@@ -152,7 +153,7 @@ const CodeEditor = () => {
       )}
       {showJs && (
         <div className="flex flex-col border p-2 relative"> 
-          <button className='h-[6vh] flex items-center cursor-pointer' onClick={() => setShowJsDropdown(!showJsDropdown)}>
+          <button className='h-[6vh] flex items-center cursor-pointer text-blue-500' onClick={() => setShowJsDropdown(!showJsDropdown)}>
             <span>JavaScript</span>
             <IoMdArrowDropdown className='h-[2vh] w-[1vw]' />
           </button>
@@ -160,7 +161,19 @@ const CodeEditor = () => {
           <div id="jsEditor" ref={jsEditorRef} style={{ height: '400px' }} />
         </div>
       )}
-      <iframe ref={iframeRef} title="Preview" style={{ width: '100%', height: '400px' }} />
+      <div>
+        <div className='flex justify-between h-[12vh] items-center'>
+          <h2 className='text-[0.8rem] font-bold text-slate-500'>Output</h2>
+          <div className='flex gap-[1rem] items-center'>
+            <button className='bg-gray-200 text-gray-700 h-[4vh] px-[0.4rem] flex items-center justify-center border-black border-solid border-[0.1rem] rounded text-[0.8rem]'>Run with JS</button>
+            <h3 className='text-[0.8rem]'>
+              Auto-run JS
+              <Checkbox {...label} defaultChecked color="default" size="small"/>
+            </h3>
+          </div>
+        </div>
+        <iframe ref={iframeRef} title="Preview" style={{ width: '100%', height: '400px' }} />
+      </div>
       {showLogin && (
         <div className="absolute right-[1rem] h-[20vh] flex flex-col justify-center items-center bg-white w-[25vw] border-slate-200 border-solid border-[0.1rem] z-10">
           <li>

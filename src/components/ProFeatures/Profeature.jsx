@@ -135,7 +135,7 @@ const Profeature = () => {
             </div>
             <div className="mt-4">
               <label htmlFor="card-number">Card details</label>
-              <div className="flex">
+              <div className="nd:flex">
                 <input
                   type="text"
                   id="card-number"

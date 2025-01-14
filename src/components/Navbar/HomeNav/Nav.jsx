@@ -6,6 +6,7 @@ import ShowNav from '../ShowNav';
 import { contextApi } from '../../../Context/NavContext';
 import { IoMdArrowDropdown } from "react-icons/io";
 import LibraryMenu from './LibraryMenu';
+import DrawerComp from './Drawer/Drawer';
 // import { IoMdArrowDropdown } from "react-icons/io";
 
 
@@ -82,7 +83,7 @@ function Nav() {
     const {showNav, setShowNav}=useContext(contextApi);
     return (
         <div>
-        <nav className='grid grid-cols-3 px-[1rem] bg-slate-100 border-[0.1rem] border-slate-300 border-solid'>
+        <nav className='grid md:grid-cols-3 grid-cols-[17vw,83vw] md:px-[1rem] bg-slate-100 border-[0.1rem] border-slate-300 border-solid'>
             <div>
             {
                 Sections.map((section, index) => {
@@ -90,16 +91,17 @@ function Nav() {
                         {section.showBtn &&
                             <div className='flex'>
                                 {!showNav && <ShowNav setShowNav={setShowNav}/>}
-                                <button onClick={handleSubMenu} className='text-[1rem] flex items-center'><span>{section.title}</span> <IoMdArrowDropdown className='h-[2vh] w-[1vw]'/></button>
-                                <button className='text-[0.8rem] flex items-center ml-[1rem]' onClick={handleLibrary}>Add Library</button>
-                                <button className='text-[0.8rem] flex items-center ml-[1rem]'>Share</button>
+                                <DrawerComp />
+                                <button onClick={handleSubMenu} className='text-[1rem] md:flex items-center hidden'><span>{section.title}</span> <IoMdArrowDropdown className='h-[2vh] w-[1vw]'/></button>
+                                <button className='text-[0.8rem] md:flex items-center ml-[1rem] hidden' onClick={handleLibrary}>Add Library</button>
+                                <button className='text-[0.8rem] md:flex items-center ml-[1rem] hidden'>Share</button>
                             </div>
                         }
                     </div>
                 })
             }
             </div>
-            <div className='flex '>
+            <div className='flex flex-wrap'>
             {
                 Sections.map((section, index) => {
                     return <div>
@@ -111,7 +113,7 @@ function Nav() {
                 })
             }
             </div>
-            <div className='flex justify-around'>
+            <div className='md:flex md:justify-around hidden'>
             {
                 Sections.map((section, index) => {
                     return <div>
